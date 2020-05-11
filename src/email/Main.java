@@ -3,8 +3,6 @@ package email;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import javax.swing.plaf.synth.SynthScrollPaneUI;
-
 import email.entidades.Cadastro;
 import email.entidades.Data;
 import email.entidades.Email;
