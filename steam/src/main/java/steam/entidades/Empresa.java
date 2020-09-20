@@ -1,4 +1,4 @@
-package email.entidades;
+package steam.entidades;
 
 import java.util.ArrayList;
 //Classe extende os atributos e métos da classe mãe Cadastro
@@ -7,14 +7,14 @@ public class Empresa extends Cadastro {
 	private String ramo;
 	private ArrayList<Pessoa> clientes;
 	//Métodos construtores
-	public Empresa(String nome, String nomeUsuario, String senha, Data dataNascimento, String ramo) {
-		super(nome, nomeUsuario, senha, dataNascimento);
+	public Empresa(Integer id, String nome, String nomeUsuario, String senha, String dataNascimento, String ramo) {
+		super(id, nome, nomeUsuario, senha, dataNascimento);
 		this.ramo = ramo;
 		this.clientes = new ArrayList<Pessoa>();
 	}
 	//Sobrecarga do método construtor onde é utilizada como uma extensão do segundo método construtor da classe cadastro
-	public Empresa(String nome, String nomeUsuario) {
-		super(nome, nomeUsuario);
+	public Empresa(Integer id, String nome, String nomeUsuario) {
+		super(id, nome, nomeUsuario);
 		this.ramo = null;
 		this.clientes = new ArrayList<Pessoa>();
 	}
@@ -56,12 +56,5 @@ public class Empresa extends Cadastro {
 
 	public void setClientes(ArrayList<Pessoa> clientes) {
 		this.clientes = clientes;
-	}
-
-	//Sobrescrita do método abstrato
-	@Override
-	public void listarContato() {
-		for(int indice = 0; indice < contatos.size(); indice++)
-			System.out.printf("\nNome de usuario do contato: %s\nNome do contato: %s\n",contatos.get(indice).getNomeUsuario(),contatos.get(indice).getNome());
 	}
 }

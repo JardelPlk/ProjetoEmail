@@ -1,30 +1,30 @@
-package email.entidades;
+package steam.entidades;
 
 import java.util.ArrayList;
 
 public class Email {
 	//Atributos
-	private int codigo;
-	private Cadastro autor;
+	private Integer idEmail;
+	private Integer idAutor;
 	ArrayList<Cadastro> destinatarios;
 	private String assunto;
 	private String mensagem;
-	private Data dataEmail;
+	private String dataEmail;
 	//Métodos construtores 
-	public Email(int codigo, Cadastro autor, String assunto, String mensagem, Data dataEmail) {
+	public Email(Integer idEmail, Integer idAutor, String assunto, String mensagem, String dataEmail) {
 		super();
-		this.codigo = codigo;
-		this.autor = autor;
+		this.idEmail = idEmail;
+		this.idAutor = idAutor;
 		this.destinatarios = new ArrayList<Cadastro>();
 		this.assunto = assunto;
 		this.mensagem = mensagem;
 		this.dataEmail = dataEmail;
 	}
 	//Sobrecarga do método onde neste ele não recebe o assunto
-	public Email(int codigo, Cadastro autor, String mensagem, Data dataEmail) {
+	public Email(Integer idEmail, Integer idAutor, String mensagem, String dataEmail) {
 		super();
-		this.codigo = codigo;
-		this.autor = autor;
+		this.idEmail = idEmail;
+		this.idAutor = idAutor;
 		this.destinatarios = new ArrayList<Cadastro>();
 		this.assunto = null;
 		this.mensagem = mensagem;
@@ -53,12 +53,6 @@ public class Email {
 		}
 	}
 	//Métodos de acesso geters e seters
-	public Cadastro getAutor() {
-		return autor;
-	}
-	public void setAutor(Cadastro autor) {
-		this.autor = autor;
-	}
 	public ArrayList<Cadastro> getDestinatarios() {
 		return destinatarios;
 	}
@@ -78,19 +72,25 @@ public class Email {
 		this.mensagem = mensagem;
 	}
 
-	public Data getDataMensagem() {
+	public String getDataMensagem() {
 		return dataEmail;
 	}
 
-	public void setDataMensagem(Data dataMensagem) {
+	public void setDataMensagem(String dataMensagem) {
 		this.dataEmail = dataMensagem;
 	}
-
-	public int getCodigo() {
-		return codigo;
+	public Integer getIdEmail() {
+		return idEmail;
+	}
+	public void setIdEmail(Integer idEmail) {
+		this.idEmail = idEmail;
+	}
+	public Integer getIdAutor() {
+		return idAutor;
+	}
+	public void setIdAutor(Integer idAutor) {
+		this.idAutor = idAutor;
 	}
 
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
-	}
+	
 }

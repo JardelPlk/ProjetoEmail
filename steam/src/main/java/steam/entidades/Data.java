@@ -1,4 +1,4 @@
-package email.entidades;
+package steam.entidades;
 
 public class Data {
 	//Atributos
