@@ -27,21 +27,13 @@ public class Main {
 		//Para pausar o programa em alguns momentos
 		String pausa;
 		//listas que serao utilizadas
-		ArrayList<Pessoa> cadastroPessoa = new ArrayList<Pessoa>();
-		ArrayList<Empresa> cadastroEmpresa = new ArrayList<Empresa>();
-		ArrayList<Email> listaEmail = new ArrayList<Email>();
 		//Outras variaveis utilizadas no código
 		String nomeUsuario;
 		String nome;
-		int dia;
-		int mes;
-		int ano;
 		String sexo;
 		String senha;
 		String dataNascimento;
 		//Utilizaremos o polimorfismo com as variais do tipo Cadastro
-		Cadastro contato;
-		Cadastro autor;
 		Cadastro destinatario;
 		Pessoa pessoa;
 		Empresa empresa;
@@ -52,7 +44,6 @@ public class Main {
 		int resposta1;
 		int resposta2;
 		String ramo;
-		boolean controle1;
 		int opcao1;
 		int opcao2;
 		int opcao3;
@@ -60,10 +51,6 @@ public class Main {
 		String mensagem;
 		String dataEmail;
 		Email email;
-		int size;
-		int codigoAutoIncremento = 0;
-		int codigo;
-		int indice3;
 		Integer idEmail;
 		Integer id;
 		//Variaveis DAO
@@ -155,11 +142,11 @@ public class Main {
 											if(resposta1 == 1) {
 												pessoaLista = pessoaDAO.todos();
 												for(indice1 = 0; indice1 < pessoaLista.size(); indice1++) 
-													System.out.printf("\nDados do usuário:\nId: %d\nNome de usuario: %s\nNome: %s\nData de Criação: %s\nSexo: %s\n",pessoaLista.get(indice1).getId(),pessoaLista.get(indice1).getNomeUsuario(),pessoaLista.get(indice1).getNome(),pessoaLista.get(indice1).getDataNascimento(),pessoaLista.get(indice1).getSexo());
+													System.out.printf("\nDados do usuário:\nId: %d\nNome de usuario: %s\nNome: %s\nData de Nascimento: %s\nSexo: %s\n",pessoaLista.get(indice1).getId(),pessoaLista.get(indice1).getNomeUsuario(),pessoaLista.get(indice1).getNome(),pessoaLista.get(indice1).getDataNascimento(),pessoaLista.get(indice1).getSexo());
 											}else {
 												empresaLista = empresaDAO.todos();
 												for(indice1 = 0; indice1 < empresaLista.size(); indice1++) 
-													System.out.printf("\nDados do usuário:\nId: %d\nNome de usuario: %s\nNome: %s\nData de Nascimento: %s\nRamo: %s\n",empresaLista.get(indice1).getId(),empresaLista.get(indice1).getNomeUsuario(),empresaLista.get(indice1).getNome(),empresaLista.get(indice1).getDataNascimento(),empresaLista.get(indice1).getRamo());
+													System.out.printf("\nDados do usuário:\nId: %d\nNome de usuario: %s\nNome: %s\nData de Criação: %s\nRamo: %s\n",empresaLista.get(indice1).getId(),empresaLista.get(indice1).getNomeUsuario(),empresaLista.get(indice1).getNome(),empresaLista.get(indice1).getDataNascimento(),empresaLista.get(indice1).getRamo());
 											}
 											pausa = entradaString.nextLine();
 											break;
@@ -439,7 +426,7 @@ public class Main {
 									System.out.println("\nUsuário não encontrado!");
 									break;
 								}
-								//autor é o autor da mensagem
+							
 								if(resposta1 == 1) {
 									idEmail = pessoaLista.get(indice1).getId();
 									emailLista = emailPessoaDAO.todos();
@@ -573,8 +560,6 @@ public class Main {
 									email = emailLista.get(indice1);
 									emailEmpresaDAO.atualizar(email);
 								}
-								
-								System.out.println(email.getMensagem());
 								
 								System.out.println("\nAtualização concluída com sucesso!");
 								pausa = entradaString.nextLine();
