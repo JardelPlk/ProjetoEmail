@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import steam.entidades.Cadastro;
 import steam.entidades.Email;
 import steam.entidades.Empresa;
 import steam.entidades.Pessoa;

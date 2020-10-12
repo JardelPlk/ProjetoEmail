@@ -94,4 +94,24 @@ public class PessoaDAO implements InterfaceDAO<Pessoa>{
 		return retorno;
 	}
 	
+	public Pessoa getNomeUsuario(String nomeUsuario) {
+		Pessoa retorno = null;
+		try {
+			String sql = "SELECT IdPessoa, Nome, NomeUsuario, Senha, DataNascimento, Sexo FROM Pessoa WHERE NomeUsuario = '" + nomeUsuario + "'";
+			ResultSet resultSet = UtilBD.consultarBD(sql);
+			while (resultSet.next()) {
+				String nome = resultSet.getString("Nome");
+				Integer id = resultSet.getInt("IdPessoa");
+				String senha = resultSet.getString("Senha");
+				String dataNascimento = resultSet.getString("DataNascimento");
+				String sexo = resultSet.getString("Sexo");
+				retorno = new Pessoa(id, nome, nomeUsuario, senha, dataNascimento, sexo);
+			}
+			resultSet.getStatement().close();
+		} catch (SQLException e) {
+			System.err.println("Não foi possível consultar uma desenvolvedora do banco!");
+		}
+		return retorno;
+	}
+	
 }

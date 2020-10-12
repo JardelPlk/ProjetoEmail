@@ -131,9 +131,9 @@ public class UtilBD {
 				+ "CONSTRAINT PK_EMAILPESSOA PRIMARY KEY (IdEmailPessoa));");
 		stm.executeUpdate("INSERT INTO EmailPessoa VALUES (null,1,'Acompanhe o site da minha banda!',"
 				+ "'Link do site: https://greenday.com/','12-03-2020')");
-		stm.executeUpdate("INSERT INTO EmailPessoa VALUES (null,2,'',"
+		stm.executeUpdate("INSERT INTO EmailPessoa VALUES (null,2,'Assunto particular!',"
 				+ "'Olá, tudo bem?','11-09-2020')");		
-		stm.executeUpdate("INSERT INTO EmailPessoa VALUES (null,3,'',"
+		stm.executeUpdate("INSERT INTO EmailPessoa VALUES (null,3,'Email de resposta.',"
 				+ "'Boa tarde, tudo ótimo e você?','12-09-2020')");	
 	}
 	
